@@ -33,13 +33,145 @@
     xmlns:fb="http://ogp.me/ns/fb#">
 
 <!--<![endif]-->
-<style>.listing-img {
+<style>
+
+
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2 / 1), (min-resolution: 192dpi), (min-resolution: 2dppx){
+.airbnb-header .header-belo {
+    background-image: url('./logo.jpg') !important;
+    -webkit-background-size: 102px 32px;
+    -moz-background-size: 102px 32px;
+    -o-background-size: 102px 32px;
+    background-size: 102px 32px;
+}
+
+h5 space-4 hide-sm{
+  display: none !important;
+}
+
+}
+
+
+@media (max-width: 767px){
+.hide-sm {
+        display: grid !important;
+}
+
+h5 space-4 hide-sm{
+  display: none !important;
+}
+
+
+
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+
+
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+.accordion .accordion-item button[aria-expanded=true] {
+  border-bottom: 1px solid #03b5d2;
+}
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #000000;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  background: none;
+  outline: none;
+}
+.accordion button:hover, .accordion button:focus {
+  cursor: pointer;
+  color: #03b5d2;
+}
+.accordion button:hover::after, .accordion button:focus::after {
+  cursor: pointer;
+  color: #03b5d2;
+  border: 1px solid #03b5d2;
+}
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.accordion button[aria-expanded=true] {
+  color: #03b5d2;
+}
+.accordion button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded=true] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2em 0;
+}
+
+
+
+.listing-img {
 overflow: hidden;
 padding-bottom: 67%
 }
 
 
-.container-brand-dark{background:#000000!important ; }
+.container-brand-dark{background:#05012b!important ; }
 
 
 
@@ -358,13 +490,29 @@ height: 100%;
 width: 100%
 }
 
+
+.space-3{
+  padding: 6px 160px 1px 160px;
+}
+
 .hero-slideshow .air-slide {
-background-color: #000
+background-image: url('background.jpg');
+background-size: cover;
+filter: blur(3px);
 }
 
 .hero-slideshow img {
 bottom: 0;
 position: absolute
+}
+
+.simple-header .airbnb-header{
+  background: white !important;
+}
+
+
+.simple-header .airbnb-header .regular-header--new .comp .hdr-btn{
+  color: #000 !important;
 }
 
 @media (max-width: 767px) {
@@ -572,19 +720,21 @@ opacity: 0.7;
 }
 
 .belong-anywhere--loaded .belong-anywhere__belo {
-background-image:  url("./image2.jpg")
+  background-color: #000000 !important;
+
 }
 
 .belong-anywhere--loaded .belong-anywhere__belong {
-background-image: url("./image2.jpg") !important;
+background-color: #000000 !important;
 }
 
 .belong-anywhere--loaded .belong-anywhere__rentals {
-background-image: url("./image2.jpg")
+background-color: #000000 !important;
+
 }
 
 .air-slideshow {
-overflow: hidden;
+overflow:scroll;
 position: relative
 }
 
@@ -630,6 +780,7 @@ z-index: 1
 
 .air-slide--active {
 display: block;
+z-index: 999999 !important;
 z-index: 2
 }
 
@@ -2102,6 +2253,10 @@ overflow: hidden;
 height: 344px
 }
 
+.hero__background{
+  background-color: #000 !important;
+}
+
 .ltlt-banner__body {
 height: 344px
 }
@@ -2251,6 +2406,7 @@ background-size: contain
 color: #b23f42
 }
 
+
 .password-strength--good {
 color: #ffb400
 }
@@ -2316,21 +2472,21 @@ font-size: 60.75px
     <link href="https://a0.muscache.com/airbnb/static/packages/common_o2.1_ie8-e3b0f3776ee48cd5e8f4ab1856235c46.css" media="all" rel="stylesheet" type="text/css" />
   <![endif]-->
   <!--[if !(IE 8)]><!-->
-    <link href="https://a0.muscache.com/airbnb/static/packages/common_o2.1-c21db11b2f9e3c566b3554b3a3970103.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="./common_o2.1-c21db11b2f9e3c566b3554b3a3970103.css" media="all" rel="stylesheet" type="text/css" />
   <!--<![endif]-->
 
   <!--[if lt IE 9]>
     <link href="https://a0.muscache.com/airbnb/static/compatibility/airglyphs-ie8-abb6df6c7f1568ba147fd36893144ed1.css" media="all" rel="stylesheet" type="text/css" />
   <![endif]-->
 
-  <link href="https://a1.muscache.com/airbnb/static/p1/main-73d86dd17cc862c8772b73a425a3a07f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="./main-73d86dd17cc862c8772b73a425a3a07f.css" media="screen" rel="stylesheet" type="text/css" />
   
 
   <meta id="csrf-param-meta-tag" name="csrf-param" content="authenticity_token"/>
   <meta id="csrf-token-meta-tag" name="csrf-token" content=""/>
 
 
-  <title>Holiday Rentals, Homes, Apartments & Accommodation - Airbnb</title>
+  <title>Galaxy Soft Website - AR King - Na oldum</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -2594,6 +2750,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <div class="comp pull-right show-logout">
+  
+  <img src="./logo.jpg" style="    width: 106%;
+  position: absolute;
+  top: 12px;
+  left: -1386px;
+  float: left;">
+
 <a data-login-modal=""
    href="/login"
    data-redirect="redirect_params[action]=show&amp;redirect_params[controller]=homepages"
@@ -2842,63 +3005,12 @@ xhr.send();
      aria-hidden="true">
   <div class="air-slideshow hero-slideshow">
     <ul class="air-slideshow__list list-unstyled js-hero-slideshow">
-      <li class="air-slide air-slide--active">
-        <img alt="Paris-ac2c9c35b05b19e65af7c8eee89f2fae" src="./image1.jpg" width="100%" />
+      <li class="air-slide air-slide">
       </li>
         <li class="air-slide">
-          <img data-image-url="./image1.jpg"
-               alt=""
-               role="presentation"
-               width="100%">
+         
         </li>
-        <li class="air-slide">
-          <img data-image-url="./image1.jpg"
-               alt=""
-               role="presentation"
-               width="100%">
-        </li>
-        <li class="air-slide">
-          <img data-image-url="./image1.jpg"
-               alt=""
-               role="presentation"
-               width="100%">
-        </li>
-        <li class="air-slide">
-          <img data-image-url="./image1.jpg"
-               alt=""
-               role="presentation"
-               width="100%">
-        </li>
-        <li class="air-slide">
-          <img data-image-url="./image1.jpg"
-               alt=""
-               role="presentation"
-               width="100%">
-        </li>
-        <li class="air-slide">
-          <img data-image-url="./image1.jpg"
-               alt=""
-               role="presentation"
-               width="100%">
-        </li>
-        <li class="air-slide">
-          <img data-image-url="./image1.jpg"
-               alt=""
-               role="presentation"
-               width="100%">
-        </li>
-        <li class="air-slide">
-          <img data-image-url="./image1.jpg"
-               alt=""
-               role="presentation"
-               width="100%">
-        </li>
-        <li class="air-slide">
-          <img data-image-url="./image1.jpg"
-               alt=""
-               role="presentation"
-               width="100%">
-        </li>
+       
     </ul>
   </div>
   
@@ -2910,9 +3022,23 @@ xhr.send();
       <h2 class="text-branding text-jumbo text-contrast space-1 hero__heading">
           Your Gateway to IT Excellence
       </h2>
-      <div class="h4 text-contrast space-4">
-          At Galaxy Soft, we redefine the possibilities of the digital world. As a trusted leader in the IT industry, we specialize in cutting-edge services designed to elevate businesses to new heights. Our mission is to propel your business into the digital future, driving growth, and innovation every step of the way.
-      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <div class="h4 text-contrast space-4" style="
+    text-align: center;
+    margin-left: 17%;
+">
+        <div style="
+    width: 78%;
+    text-align: center;
+    font-size: 30px;
+">
+          At Galaxy Soft, we redefine the possibilities of the digital world. As a trusted leader in the IT industry, we specialize in cutting-edge services designed to elevate businesses to new heights.
+        </div>
+        </div>
 
   
     </div>
@@ -3318,7 +3444,7 @@ aria-hidden="true"
 
 <div id="belong-anywhere-container"
    class="air-slideshow belong-anywhere hide-sm js-belong-anywhere">
-<ul class="belong-anywhere__slides list-unstyled" id="belong-anywhere-slideshow">
+<ul class="belong-anywhere__slides list-unstyled" id="belong-anywhere-slideshow"  style="background-color: #000000 !important;">
   <li class="air-slide air-slide--active
              background-cover belong-anywhere__belong"
       aria-hidden="false">
@@ -3327,6 +3453,13 @@ aria-hidden="true"
         <div class="text-jumbo text-contrast text-branding">
           Your Trusted IT Partner
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
         <div class="h3 text-contrast space-3">
           Galaxy Soft stands at the forefront of the IT industry, where innovation meets expertise. With a relentless commitment to delivering exceptional solutions, we are your trusted IT partner on the path to digital transformation. Our team of seasoned professionals is driven by the pursuit of excellence, leveraging cutting-edge technologies, including AI, ML, and Big Data, to empower businesses like yours. Discover the Galaxy Soft difference – where your success is our mission.
       </div>
@@ -3338,10 +3471,147 @@ aria-hidden="true"
 
 
 
+
+
+<div id="belong-anywhere-container" class="air-slideshow belong-anywhere hide-sm js-belong-anywhere" style="
+    margin-top: -107px;
+    z-index: 99999;
+width: 85%;
+margin: 36px 7px 1px 39px;
+">
+
+
+<h2 style="
+   position: relative;
+   text-align: center;
+   padding-bottom: 36px;
+   background: whitesmoke;
+   z-index: 999;
+   color: black;
+"><strong>Reasons for Choosing Us for Cooperation</strong></h2>
+
+
+<ul class="belong-anywhere__slides list-unstyled" id="belong-anywhere-slideshow">
+  <li class="air-slide air-slide--active
+             background-cover belong-anywhere__belong"
+      aria-hidden="false" style="    background-color: #f5f5f5 !important; z-index: 99999;">
+
+
+
+
+
+
+      <div class="container">
+        <h2 style="text-align: center;
+        color: #000000; font-weight: 700;">Frequently Asked Questions </h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Why should I choose Galaxy Soft over other IT service providers?</span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>At Galaxy Soft, we understand that selecting the right IT partner is a crucial decision for businesses seeking digital excellence.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">What makes Galaxy Soft stand out in the IT industry?
+            </span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>With a track record of excellence, Galaxy Soft boasts an exceptional team of experts who are leaders in their respective fields. Our proficiency spans digital transformation, AI, ML, and Big Data, allowing us to deliver top-tier IT solutions tailored to your unique needs.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">How does Galaxy Soft ensure my business's specific needs are met?
+            </span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>We don't believe in one-size-fits-all solutions. Galaxy Soft's approach begins with in-depth consultations to understand your unique challenges and objectives. We craft customized strategies that align with your goals, ensuring every aspect of our service is tailored to your success.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Can Galaxy Soft keep my business at the forefront of technology?
+            </span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>Absolutely. We pride ourselves on staying at the forefront of technological advancements. By partnering with Galaxy Soft, you gain access to the latest innovations, including AI, ML, and Big Data analytics, enabling your business to thrive in the digital era.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">What tangible results can I expect from Galaxy Soft's services?
+            </span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>We are committed to delivering measurable results. Galaxy Soft's solutions are designed to enhance efficiency, increase productivity, and drive growth. Our focus is on empowering your business to achieve real-world, tangible success.
+              </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+
+
+
+
+  </li>
+</ul>
+</div>
+
+
+
+
+
+<div id="belong-anywhere-container"
+   class="air-slideshow belong-anywhere hide-sm js-belong-anywhere" style="
+      margin-top: -107px;
+    z-index: 99999;
+">
+
+
+<h2 style="
+   position: relative;
+   text-align: center;
+   padding-bottom: 36px;
+   background: whitesmoke;
+   z-index: 999;
+   color: black;
+"><strong>Contact Us</strong></h2>
+
+
+<ul class="belong-anywhere__slides list-unstyled" id="belong-anywhere-slideshow">
+  <li class="air-slide air-slide--active
+             background-cover belong-anywhere__belong"
+             style="background-color: #000000; !important"
+      aria-hidden="false">
+    <div class="row row-table row-full-height text-center">
+      <div class="col-sm-12 col-middle">
+        <div class="text-jumbo text-contrast text-branding">
+Contact Us        </div>
+<br>
+<br>
+<br>
+<br>
+        <div class="h3 text-contrast space-3">
+          Galaxy Soft? (Contact us)
+          Choose us as your IT partner and experience the difference. Your success is our mission, and we're here to make it happen.
+          
+          At Galaxy Soft, we value your inquiries, feedback, and collaborations. Feel free to reach out to us for any questions, partnership opportunities, or project discussions. Our dedicated team is here to assist you in your journey toward digital excellence. Contact us today and let's explore the endless possibilities of the IT landscape together.
+                </div>
+      </div>
+    </div>
+  </li>
+</ul>
+</div>
+
+
+
+
+
+<!-- services in here-->
+
 <section id="community-wrapper" class="community space-4 hide-sm">
 
 <div class="space-top-8 space-8 text-center">
-  <h2><strong>Services</strong></h2>
+  <h2 style="color: #000000;"><strong>Services</strong></h2>
 </div>
 
 <ul class="community__container row col-center list-unstyled js-community-container">
@@ -3485,11 +3755,11 @@ aria-hidden="true"
 </div>
 
 <div class="space-top-8 space-8 text-center">
-  <h2><strong>About Us</strong></h2>
+  <h2 style="color: #000000;"><strong>About Us</strong></h2>
 </div>
   </main>
 
-    <div id="footer" class="container-brand-dark footer-surround footer-container">
+    <div id="footer" class="container-brand-dark footer-surround footer-container" style=>
       <footer class="page-container-responsive">
 <div class="row row-condensed">
   <div class="col-md-3 col-md-offset-1">
@@ -3500,11 +3770,14 @@ aria-hidden="true"
 
   </div>
 
-  <div class="col-md-2 col-md-offset-1 hide-sm">
-    <h2 class="h5">Company</h2>
+  <div class="col-md-2 col-md-offset-1 hide-sm" style="display: none !important;">
+    <h2 class="h4">Company</h2>
     <ul class="list-layout">
       <li><a href="#" class="link-contrast">About Us</a></li>
+      <br>
       <li><a href="#" class="link-contrast">Blog</a></li>
+      <br>
+      <li><a href="#" class="link-contrast">Services</a></li>
     </ul>
   </div>
 </div>
@@ -3513,14 +3786,14 @@ aria-hidden="true"
   <ul class="list-layout list-inline text-center h5">
     <li><a href="#" class="link-contrast">About Us</a></li>
     <li><a href="#" class="link-contrast">Blog</a></li>
-  
+    <li><a href="#" class="link-contrast">Services</a></li>
   </ul>
 </div>
 <br>
 
 
 <div class="text-center">
-  <h2 class="h5 space-4 hide-sm">Join Us On</h2>
+  <h2 class="h5 space-4 hide-sm" style="display: none !important;">Join Us On</h2>
   <ul class="list-layout list-inline" itemscope itemtype="http://schema.org/Organization">
     <link itemprop="url" href="">
     <meta itemprop="logo" content="https://a2.muscache.com/airbnb/static/logos/belo-200x200-4d851c5b28f61931bf1df28dd15e60ef.png">
@@ -3577,7 +3850,7 @@ aria-hidden="true"
 <meta content="{&quot;js&quot;:&quot;https://a2.muscache.com/airbnb/static/packages/surveyair.bundle-764d5418b585e12222d03f68510b57df.js&quot;,&quot;css&quot;:&quot;https://a0.muscache.com/airbnb/static/packages/surveyair-a710031e6c4076ff7b81e9765fb07bd1.css&quot;}" id="_bootstrap-surveyair" />
 <meta content="{&quot;js&quot;:&quot;https://a1.muscache.com/airbnb/static/packages/browser-update.bundle-9889d2aa03c91b97343b170401066a84.js&quot;}" id="_bootstrap-browser-update" />
 <meta content="&quot;https://a0.muscache.com/airbnb/static/china_typeahead_data-06cee030dd9f4e721c7044d7e83e002e.json&quot;" id="_bootstrap-china_typeahead_data" />
-<meta content="{&quot;nux_survey.header title&quot;:&quot;Wait, we need you!&quot;,&quot;nux_survey.pop modal body&quot;:&quot;Answer a quick 5 minute survey about your time on Airbnb today. It will help us make your experience even better.&quot;,&quot;nux_survey.survey button text&quot;:&quot;Take Survey&quot;,&quot;saved_search_where_do_you_want_to_go&quot;:&quot;Where do you want to go?&quot;,&quot;saved_search_search_for_city_address_landmark&quot;:&quot;Search by city, address, landmark...&quot;,&quot;saved_search_search_button&quot;:&quot;Search&quot;,&quot;saved_search_please_set_location&quot;:&quot;Please set location&quot;,&quot;saved_search_checkin&quot;:&quot;Check In&quot;,&quot;saved_search_checkout&quot;:&quot;Check Out&quot;,&quot;saved_search_number_of_guests&quot;:&quot;Number of guests&quot;,&quot;saved_search_recent_searches&quot;:&quot;Recent Searches&quot;,&quot;saved_search_destinations&quot;:&quot;Destinations&quot;,&quot;saved_search_guests&quot;:&quot;%{smart_count} Guest||||%{smart_count} Guests&quot;,&quot;p1.search_placeholder by city, neighborhood, or address&quot;:&quot;Search by city, neighbourhood, or address...&quot;,&quot;p1.search_placeholder by city, address, or landmarks&quot;:&quot;Search by city, address, even landmarks...&quot;,&quot;smart_banner.title&quot;:&quot;Airbnb for iOS&quot;,&quot;smart_banner.Install&quot;:&quot;Install&quot;,&quot;smart_banner.Open in App&quot;:&quot;Open in App&quot;,&quot;smart_banner.Always be ready&quot;:&quot;Always be ready&quot;,&quot;smart_banner.Find your next adventure&quot;:&quot;Find your next adventure, even if you&#x27;re on the go.&quot;,&quot;Password&quot;:&quot;Password&quot;,&quot;users.Confirm_Password_to_Continue&quot;:&quot;Confirm Password to Continue&quot;,&quot;users.Confirm_Password&quot;:&quot;Confirm Password&quot;,&quot;users.Cancel&quot;:&quot;Cancel&quot;,&quot;users.Please_enter_your_Airbnb_password_to_continue.&quot;:&quot;For your security, please enter your Airbnb password to continue.&quot;,&quot;user.signup.forgot_password&quot;:&quot;Forgot password?&quot;,&quot;users.Confirm_Facebook_Password&quot;:&quot;Confirm Facebook Password&quot;,&quot;home&quot;:&quot;Home&quot;,&quot;download_the_app&quot;:&quot;Download the App&quot;,&quot;sign_up&quot;:&quot;Sign Up&quot;,&quot;log_in&quot;:&quot;Log In&quot;,&quot;alerts&quot;:&quot;Alerts&quot;,&quot;inbox&quot;:&quot;Inbox&quot;,&quot;discover&quot;:&quot;Discover&quot;,&quot;search&quot;:&quot;Search&quot;,&quot;how_it_works&quot;:&quot;How it Works&quot;,&quot;help&quot;:&quot;Help&quot;,&quot;invite_friends&quot;:&quot;Invite Friends&quot;,&quot;logout&quot;:&quot;Log Out&quot;,&quot;name&quot;:&quot;User&quot;,&quot;photography&quot;:&quot;Photography&quot;,&quot;your_trips&quot;:&quot;Your Trips&quot;,&quot;close&quot;:&quot;Close&quot;,&quot;where_are_you_going&quot;:&quot;Where are you going?&quot;,&quot;checkin&quot;:&quot;Check in&quot;,&quot;checkout&quot;:&quot;Check out&quot;,&quot;number_of_guests&quot;:&quot;Number of guests&quot;,&quot;room_type_0&quot;:&quot;Entire home/flat&quot;,&quot;room_type_1&quot;:&quot;Private room&quot;,&quot;room_type_2&quot;:&quot;Shared room&quot;,&quot;find_a_place&quot;:&quot;Find a place&quot;,&quot;shared.x guests&quot;:&quot;%{smart_count} guest |||| %{smart_count} guests&quot;,&quot;guests&quot;:&quot;Guests&quot;,&quot;room_type&quot;:&quot;Room type&quot;,&quot;shared.Help Center&quot;:&quot;Help Centre&quot;,&quot;shared.Ask the Community&quot;:&quot;Ask the Community&quot;,&quot;Back&quot;:&quot;Back&quot;,&quot;view this article in the help center&quot;:&quot;View this article in the Help Centre&quot;,&quot;field_guide.error.no_load_topic&quot;:&quot;Suggested help articles unavailable—visit our %{link_start}Help Center%{link_end} instead.&quot;,&quot;field_guide.no_results&quot;:&quot;No results found&quot;,&quot;field_guide.suggested_actions&quot;:&quot;Suggested Actions&quot;,&quot;field_guide.search_down&quot;:&quot;Unable to perform search, please try again later&quot;,&quot;field_guide.articles_result_title&quot;:&quot;Articles related to \&quot;%{query}\&quot;&quot;,&quot;field_guide.suggested_articles&quot;:&quot;Suggested Articles&quot;,&quot;field_guide.how_can_we_help&quot;:&quot;How can we help you?&quot;,&quot;field_guide.welcome_name_how_can_we_help&quot;:&quot;Welcome, %{first_name}! How can we help?&quot;,&quot;field_guide.welcome_how_can_we_help&quot;:&quot;Welcome! How can we help?&quot;,&quot;field_guide.search_for_anything&quot;:&quot;Search for anything (booking a place, getting paid, reviews)&quot;,&quot;field_guide.cant_find_what_youre_looking_for&quot;:&quot;Can’t find what you&#x27;re looking for?&quot;,&quot;shared.Messages&quot;:&quot;Messages&quot;,&quot;shared.Notifications&quot;:&quot;Notifications&quot;,&quot;shared.See all&quot;:&quot;See all&quot;,&quot;shared.View Dashboard&quot;:&quot;View Dashboard&quot;,&quot;shared.View Inbox&quot;:&quot;View Inbox&quot;,&quot;notifications.Unread Messages In Inbox&quot;:&quot;You have %{smart_count} unread message in your inbox.||||You have %{smart_count} unread messages in your inbox.&quot;,&quot;notifications.Unread Messages In Inbox From Last 7 Days&quot;:&quot;You have %{smart_count} unread message in your inbox from the past week.||||You have %{smart_count} unread messages in your inbox from the past week.&quot;,&quot;notifications.Additional Unread Messages&quot;:&quot;You have %{smart_count} additional unread message.||||You have %{smart_count} additional unread messages.&quot;,&quot;notifications.Additional Unread Messages Last Week&quot;:&quot;You have %{smart_count} additional unread message from the last week.||||You have %{smart_count} additional unread messages from the last week.&quot;,&quot;notifications.5+ Notifications&quot;:&quot;There are 5+ notifications waiting for you in your %{link_start}dashboard%{link_end}.&quot;,&quot;notifications.Read All Notifications&quot;:&quot;There is %{smart_count} notification waiting for you in your %{link_start}dashboard%{link_end}.||||There are %{smart_count} notifications waiting for you in your %{link_start}dashboard%{link_end}.&quot;,&quot;notifications.Read All Messages&quot;:&quot;No new messages. You’re all caught up!&quot;,&quot;notifications.Error&quot;:&quot;Sorry, we can’t load new messages right now. %{link_start}View Inbox%{link_end}&quot;,&quot;airlock.title&quot;:&quot;Security Check&quot;,&quot;airlock.photo_id_verification.title&quot;:&quot;Photo Id Verification&quot;,&quot;airlock.photo_id_verification.option_selection.title&quot;:&quot;Verify Your ID&quot;,&quot;airlock.photo_id_verification.option_selection.description&quot;:&quot;When you stay in an Airbnb, you’re staying in someone’s home. Scanning your government ID helps your host feel more comfortable sharing their personal space.&quot;,&quot;airlock.photo_id_verification.response.title&quot;:&quot;Scan Your ID&quot;,&quot;airlock.photo_id_verification.verified&quot;:&quot;Account Verified&quot;,&quot;airlock.photo_id_verification.response.invalid&quot;:&quot;Something went wrong while scanning your ID. Please try again.&quot;,&quot;airlock.captcha.thread_create.response.description&quot;:&quot;Sometimes, automated programs abuse websites and try to send fake message to others. Complete the prompt below to show you’re a real person who means to send this message.&quot;,&quot;airlock.captcha.response.invalid&quot;:&quot;Please try completing the prompt below again.&quot;,&quot;airlock.phone_verification.title&quot;:&quot;Phone Verification&quot;,&quot;airlock.phone_verification.option_selection.title&quot;:&quot;Help us keep your account secure.&quot;,&quot;airlock.phone_verification.listing_activate.option_selection.title&quot;:&quot;We need you to confirm this change.&quot;,&quot;airlock.phone_verification.payout_create.option_selection.title&quot;:&quot;We need you to confirm this change.&quot;,&quot;airlock.phone_verification.option_selection.description&quot;:&quot;We want to confirm that it’s really you who’s trying to access your account. To do that, we’ll send a code to a phone you’ve previously verified on Airbnb.&quot;,&quot;airlock.phone_verification.listing_activate.option_selection.description&quot;:&quot;We want to confirm that it’s really you who’s trying to add a listing.  To do that, we’ll send a code to a phone you’ve previously verified on Airbnb.&quot;,&quot;airlock.phone_verification.payout_create.option_selection.description&quot;:&quot;We want to confirm that it’s really you who’s trying to add a payout method.  To do that, we’ll send a code to a phone you’ve previously verified on Airbnb.&quot;,&quot;airlock.phone_verification.option_selection.how&quot;:&quot;How should we send the code?&quot;,&quot;airlock.phone_verification.option_selection.where&quot;:&quot;Where should we send the code?&quot;,&quot;airlock.phone_verification.response.title&quot;:&quot;Enter your 4-digit code.&quot;,&quot;airlock.phone_verification.We sent a code to your phone number&quot;:&quot;We sent a code to your phone number ending in %{last_four_digits}.&quot;,&quot;airlock.phone_verification.Depending on your provider&quot;:&quot;Depending on your provider, it may take a few minutes to arrive.&quot;,&quot;airlock.phone_verification.We will wait right here&quot;:&quot;We’ll wait right here.&quot;,&quot;airlock.phone_verification.Send me a text message&quot;:&quot;Send me a text message (SMS)&quot;,&quot;airlock.phone_verification.Call me&quot;:&quot;Call me&quot;,&quot;airlock.api_error&quot;:&quot;Something went wrong while processing your request. Please try again.&quot;,&quot;airlock.phone_verification.Phone number ending in&quot;:&quot;Phone number ending in %{last_four}&quot;,&quot;airlock.phone_verification.Enter Your Code&quot;:&quot;Enter Your Code&quot;,&quot;airlock.phone_verification.response.invalid&quot;:&quot;Looks like you entered the code incorrectly.&quot;,&quot;airlock.identity_info_confirmation.response.confirm_details&quot;:&quot;Confirm details&quot;,&quot;airlock.identity_info_confirmation.response.make_sure_details_are_correct&quot;:&quot;Take a moment to make sure your account details are still correct.&quot;,&quot;airlock.identity_info_confirmation.response.name&quot;:&quot;Name&quot;,&quot;airlock.identity_info_confirmation.response.first_name&quot;:&quot;First name&quot;,&quot;airlock.identity_info_confirmation.response.last_name&quot;:&quot;Last name&quot;,&quot;airlock.identity_info_confirmation.response.email&quot;:&quot;Email address&quot;,&quot;airlock.identity_info_confirmation.response.birthday&quot;:&quot;Birthday&quot;,&quot;airlock.identity_info_confirmation.response.birthday_month&quot;:&quot;Month&quot;,&quot;airlock.identity_info_confirmation.response.birthday_day&quot;:&quot;Day&quot;,&quot;airlock.identity_info_confirmation.response.birthday_year&quot;:&quot;Year&quot;,&quot;airlock.identity_info_confirmation.response.confirm_and_continue&quot;:&quot;Confirm and Continue&quot;,&quot;airlock.identity_info_confirmation.response.you_are_X_years_old&quot;:&quot;You’ve indicated you are %{emphasis_start}%{smart_count} year old%{emphasis_end}. ||||You’ve indicated you are %{emphasis_start}%{smart_count} years old%{emphasis_end}.&quot;,&quot;airlock.identity_info_confirmation.response.is_this_age_correct&quot;:&quot;Is this correct?&quot;,&quot;airlock.identity_info_confirmation.response.not_correct_change_my_birthday&quot;:&quot;No, change my birthday&quot;,&quot;airlock.identity_info_confirmation.response.yes_my_birthday_is_correct&quot;:&quot;Yes, this is correct&quot;,&quot;airlock.password_reset.response.title&quot;:&quot;Let’s change your password.&quot;,&quot;airlock.password_reset.response.description&quot;:&quot;Changing your password is an easy way to help keep your account secure. Let’s do that now.&quot;,&quot;airlock.password_reset.response.current_password&quot;:&quot;Current Password&quot;,&quot;airlock.password_reset.response.new_password&quot;:&quot;New Password&quot;,&quot;airlock.password_reset.response.confirm_new_password&quot;:&quot;Confirm New Password&quot;,&quot;airlock.password_reset.Next&quot;:&quot;Change Password&quot;,&quot;airlock.account_disabled.introduction.title&quot;:&quot;Account Disabled&quot;,&quot;airlock.account_disabled.introduction.introduction&quot;:&quot;To help protect your information, we’ve temporarily blocked your Airbnb account.&quot;,&quot;airlock.account_disabled.introduction.description&quot;:&quot;To restore access, send an email to account.disabled@airbnb.com from an email address associated with your Airbnb account.&quot;,&quot;airlock.no_phone_access.introduction.title&quot;:&quot;Emailing us will take longer.&quot;,&quot;airlock.no_phone_access.introduction.introduction&quot;:&quot;For security reasons, having Airbnb manually confirm this change can take 1-2 days. Email us at &lt;a href=\&quot;mailto:account.disabled@airbnb.com\&quot;&gt;account.disabled@airbnb.com&lt;/a&gt; from an address associated with your account and we’ll take it from there.&quot;,&quot;airlock.no_phone_access.introduction.tip.title&quot;:&quot;Make this update faster with your phone&quot;,&quot;airlock.no_phone_access.introduction.tip.description&quot;:&quot;If you’re travelling or your phone’s just out of reach, wait until you get it back and try to make this update again.&quot;,&quot;airlock.no_phone_access.Send Me a Code&quot;:&quot;Send Me a Code&quot;,&quot;airlock.no_phone_access.Email Airbnb&quot;:&quot;Email Airbnb&quot;,&quot;airlock.contact_us.response.title&quot;:&quot;Contact Us&quot;,&quot;airlock.contact_us.response.description&quot;:&quot;For your security, we would like to further verify your account.  Please contact us at &lt;a href=\&quot;mailto:account.disabled@airbnb.com\&quot;&gt;account.disabled@airbnb.com&lt;/a&gt;.&quot;,&quot;airlock.introduction&quot;:&quot;In order to continue, we ask that you complete a few challenges.&quot;,&quot;airlock.Get Started&quot;:&quot;Get Started&quot;,&quot;airlock.Continue&quot;:&quot;Continue&quot;,&quot;airlock.Next&quot;:&quot;Next&quot;,&quot;airlock.Back&quot;:&quot;Back&quot;,&quot;airlock.success.Thanks&quot;:&quot;Thanks %{first_name}&quot;,&quot;airlock.success.You are done&quot;:&quot;You’re done! You can go back to what you were doing.&quot;,&quot;have_a_moment&quot;:&quot;Have a moment?&quot;,&quot;help_make_experience_better&quot;:&quot;Help us make your Airbnb experience better by answering a quick survey.&quot;,&quot;lets_do_this&quot;:&quot;Let&#x27;s do this!&quot;,&quot;thanks_for_helping&quot;:&quot;Thanks for helping us out!&quot;,&quot;fill_out_survey&quot;:&quot;We&#x27;d love it if you filled out this quick survey.&quot;,&quot;surveyair_cancel&quot;:&quot;Cancel&quot;,&quot;surveyair_submit&quot;:&quot;Submit&quot;,&quot;surveyair_next&quot;:&quot;Next&quot;,&quot;surveyair_back&quot;:&quot;Back&quot;,&quot;surveyair_pagination&quot;:&quot;%{currentPage} of %{totalNumPages} pages&quot;,&quot;surveyair_strongly_disagree&quot;:&quot;Strongly Disagree&quot;,&quot;surveyair_disagree&quot;:&quot;Disagree&quot;,&quot;surveyair_neutral&quot;:&quot;Neutral&quot;,&quot;surveyair_agree&quot;:&quot;Agree&quot;,&quot;surveyair_strongly_agree&quot;:&quot;Strongly Agree&quot;,&quot;surveyair_no_answer&quot;:&quot;No Answer&quot;,&quot;surveyair_very_difficult&quot;:&quot;Very Difficult&quot;,&quot;surveyair_difficult&quot;:&quot;Difficult&quot;,&quot;surveyair_easy&quot;:&quot;Easy&quot;,&quot;surveyair_very_easy&quot;:&quot;Very Easy&quot;,&quot;shared.Close this modal&quot;:&quot;Close this modal&quot;,&quot;your_trips.x_guest(s)&quot;:&quot;%{smart_count} guest||||%{smart_count} guests&quot;,&quot;shared.Trips&quot;:&quot;Trips&quot;,&quot;header.View Trips&quot;:&quot;View Trips&quot;,&quot;header.View Wish Lists&quot;:&quot;View Wish Lists&quot;,&quot;header.You Have X Wish List(s)&quot;:&quot;You have %{smart_count} wish list||||You have %{smart_count} wish lists&quot;,&quot;header.X home(s)&quot;:&quot;%{smart_count} home||||%{smart_count} homes&quot;,&quot;header.Popular Wish Lists&quot;:&quot;Popular Wish Lists&quot;,&quot;your_trips.Error&quot;:&quot;Sorry, we can’t load trip updates right now. %{link_start}View Trips%{link_end}&quot;,&quot;reservation_status.timedout&quot;:&quot;Expired&quot;,&quot;shared.Wish Lists&quot;:&quot;Wish Lists&quot;,&quot;choose_language&quot;:&quot;Choose language&quot;,&quot;choose_currency&quot;:&quot;Choose currency&quot;,&quot;clear_dates&quot;:&quot;Clear Dates&quot;,&quot;datepicker_updated_years_ago&quot;:&quot;Updated %{smart_count} year ago |||| Updated %{smart_count} years ago&quot;,&quot;datepicker_updated_months_ago&quot;:&quot;Updated %{smart_count} month ago |||| Updated %{smart_count} months ago&quot;,&quot;datepicker_updated_days_ago&quot;:&quot;Updated %{smart_count} day ago |||| Updated %{smart_count} days ago&quot;,&quot;datepicker_updated_today&quot;:&quot;Updated today&quot;,&quot;datepicker_never_updated&quot;:&quot;Never updated&quot;,&quot;datepicker_min_nights&quot;:&quot;%{smart_count} night minimum stay |||| %{smart_count} night minimum stay&quot;,&quot;datepicker_min_nights_this_month&quot;:&quot;%{smart_count} night min. this month |||| %{smart_count} nights min. this month&quot;,&quot;datepicker_min_nights_varies&quot;:&quot;Minimum stay varies&quot;,&quot;sorry_something_went_wrong&quot;:&quot;Sorry, something went wrong. Please refresh the page and try again.&quot;}" id="_bootstrap-phrases" />
+<meta content="{&quot;nux_survey.header title&quot;:&quot;Wait, we need you!&quot;,&quot;nux_survey.pop modal body&quot;:&quot;Answer a quick 5 minute survey about your time on Airbnb today. It will help us make your experience even better.&quot;,&quot;nux_survey.survey button text&quot;:&quot;Take Survey&quot;,&quot;saved_search_where_do_you_want_to_go&quot;:&quot;Where do you want to go?&quot;,&quot;saved_search_search_for_city_address_landmark&quot;:&quot;Search by city, address, landmark...&quot;,&quot;saved_search_search_button&quot;:&quot;Search&quot;,&quot;saved_search_please_set_location&quot;:&quot;Please set location&quot;,&quot;saved_search_checkin&quot;:&quot;Check In&quot;,&quot;saved_search_checkout&quot;:&quot;Check Out&quot;,&quot;saved_search_number_of_guests&quot;:&quot;Number of guests&quot;,&quot;saved_search_recent_searches&quot;:&quot;Recent Searches&quot;,&quot;saved_search_destinations&quot;:&quot;Destinations&quot;,&quot;saved_search_guests&quot;:&quot;%{smart_count} Guest||||%{smart_count} Guests&quot;,&quot;p1.search_placeholder by city, neighborhood, or address&quot;:&quot;Search by city, neighbourhood, or address...&quot;,&quot;p1.search_placeholder by city, address, or landmarks&quot;:&quot;Search by city, address, even landmarks...&quot;,&quot;smart_banner.title&quot;:&quot;Airbnb for iOS&quot;,&quot;smart_banner.Install&quot;:&quot;Install&quot;,&quot;smart_banner.Open in App&quot;:&quot;Open in App&quot;,&quot;smart_banner.Always be ready&quot;:&quot;Always be ready&quot;,&quot;smart_banner.Find your next adventure&quot;:&quot;Find your next adventure, even if you&#x27;re on the go.&quot;,&quot;Password&quot;:&quot;Password&quot;,&quot;users.Confirm_Password_to_Continue&quot;:&quot;Confirm Password to Continue&quot;,&quot;users.Confirm_Password&quot;:&quot;Confirm Password&quot;,&quot;users.Cancel&quot;:&quot;Cancel&quot;,&quot;users.Please_enter_your_Airbnb_password_to_continue.&quot;:&quot;For your security, please enter your Airbnb password to continue.&quot;,&quot;user.signup.forgot_password&quot;:&quot;Forgot password?&quot;,&quot;users.Confirm_Facebook_Password&quot;:&quot;Confirm Facebook Password&quot;,&quot;home&quot;:&quot;Home&quot;,&quot;download_the_app&quot;:&quot;Services&quot;,&quot;sign_up&quot;:&quot;About Us&quot;,&quot;log_in&quot;:&quot;&quot;,&quot;alerts&quot;:&quot;Alerts&quot;,&quot;inbox&quot;:&quot;Inbox&quot;,&quot;discover&quot;:&quot;&quot;,&quot;search&quot;:&quot;&quot;,&quot;how_it_works&quot;:&quot;&quot;,&quot;help&quot;:&quot;&quot;,&quot;invite_friends&quot;:&quot;Invite Friends&quot;,&quot;logout&quot;:&quot;Log Out&quot;,&quot;name&quot;:&quot;User&quot;,&quot;photography&quot;:&quot;Photography&quot;,&quot;your_trips&quot;:&quot;Your Trips&quot;,&quot;close&quot;:&quot;Close&quot;,&quot;where_are_you_going&quot;:&quot;Where are you going?&quot;,&quot;checkin&quot;:&quot;Check in&quot;,&quot;checkout&quot;:&quot;Check out&quot;,&quot;number_of_guests&quot;:&quot;Number of guests&quot;,&quot;room_type_0&quot;:&quot;Entire home/flat&quot;,&quot;room_type_1&quot;:&quot;Private room&quot;,&quot;room_type_2&quot;:&quot;Shared room&quot;,&quot;find_a_place&quot;:&quot;Find a place&quot;,&quot;shared.x guests&quot;:&quot;%{smart_count} guest |||| %{smart_count} guests&quot;,&quot;guests&quot;:&quot;Guests&quot;,&quot;room_type&quot;:&quot;Room type&quot;,&quot;shared.Help Center&quot;:&quot;Help Centre&quot;,&quot;shared.Ask the Community&quot;:&quot;Ask the Community&quot;,&quot;Back&quot;:&quot;Back&quot;,&quot;view this article in the help center&quot;:&quot;View this article in the Help Centre&quot;,&quot;field_guide.error.no_load_topic&quot;:&quot;Suggested help articles unavailable—visit our %{link_start}Help Center%{link_end} instead.&quot;,&quot;field_guide.no_results&quot;:&quot;No results found&quot;,&quot;field_guide.suggested_actions&quot;:&quot;Suggested Actions&quot;,&quot;field_guide.search_down&quot;:&quot;Unable to perform search, please try again later&quot;,&quot;field_guide.articles_result_title&quot;:&quot;Articles related to \&quot;%{query}\&quot;&quot;,&quot;field_guide.suggested_articles&quot;:&quot;Suggested Articles&quot;,&quot;field_guide.how_can_we_help&quot;:&quot;How can we help you?&quot;,&quot;field_guide.welcome_name_how_can_we_help&quot;:&quot;Welcome, %{first_name}! How can we help?&quot;,&quot;field_guide.welcome_how_can_we_help&quot;:&quot;Welcome! How can we help?&quot;,&quot;field_guide.search_for_anything&quot;:&quot;Search for anything (booking a place, getting paid, reviews)&quot;,&quot;field_guide.cant_find_what_youre_looking_for&quot;:&quot;Can’t find what you&#x27;re looking for?&quot;,&quot;shared.Messages&quot;:&quot;Messages&quot;,&quot;shared.Notifications&quot;:&quot;Notifications&quot;,&quot;shared.See all&quot;:&quot;See all&quot;,&quot;shared.View Dashboard&quot;:&quot;View Dashboard&quot;,&quot;shared.View Inbox&quot;:&quot;View Inbox&quot;,&quot;notifications.Unread Messages In Inbox&quot;:&quot;You have %{smart_count} unread message in your inbox.||||You have %{smart_count} unread messages in your inbox.&quot;,&quot;notifications.Unread Messages In Inbox From Last 7 Days&quot;:&quot;You have %{smart_count} unread message in your inbox from the past week.||||You have %{smart_count} unread messages in your inbox from the past week.&quot;,&quot;notifications.Additional Unread Messages&quot;:&quot;You have %{smart_count} additional unread message.||||You have %{smart_count} additional unread messages.&quot;,&quot;notifications.Additional Unread Messages Last Week&quot;:&quot;You have %{smart_count} additional unread message from the last week.||||You have %{smart_count} additional unread messages from the last week.&quot;,&quot;notifications.5+ Notifications&quot;:&quot;There are 5+ notifications waiting for you in your %{link_start}dashboard%{link_end}.&quot;,&quot;notifications.Read All Notifications&quot;:&quot;There is %{smart_count} notification waiting for you in your %{link_start}dashboard%{link_end}.||||There are %{smart_count} notifications waiting for you in your %{link_start}dashboard%{link_end}.&quot;,&quot;notifications.Read All Messages&quot;:&quot;No new messages. You’re all caught up!&quot;,&quot;notifications.Error&quot;:&quot;Sorry, we can’t load new messages right now. %{link_start}View Inbox%{link_end}&quot;,&quot;airlock.title&quot;:&quot;Security Check&quot;,&quot;airlock.photo_id_verification.title&quot;:&quot;Photo Id Verification&quot;,&quot;airlock.photo_id_verification.option_selection.title&quot;:&quot;Verify Your ID&quot;,&quot;airlock.photo_id_verification.option_selection.description&quot;:&quot;When you stay in an Airbnb, you’re staying in someone’s home. Scanning your government ID helps your host feel more comfortable sharing their personal space.&quot;,&quot;airlock.photo_id_verification.response.title&quot;:&quot;Scan Your ID&quot;,&quot;airlock.photo_id_verification.verified&quot;:&quot;Account Verified&quot;,&quot;airlock.photo_id_verification.response.invalid&quot;:&quot;Something went wrong while scanning your ID. Please try again.&quot;,&quot;airlock.captcha.thread_create.response.description&quot;:&quot;Sometimes, automated programs abuse websites and try to send fake message to others. Complete the prompt below to show you’re a real person who means to send this message.&quot;,&quot;airlock.captcha.response.invalid&quot;:&quot;Please try completing the prompt below again.&quot;,&quot;airlock.phone_verification.title&quot;:&quot;Phone Verification&quot;,&quot;airlock.phone_verification.option_selection.title&quot;:&quot;Help us keep your account secure.&quot;,&quot;airlock.phone_verification.listing_activate.option_selection.title&quot;:&quot;We need you to confirm this change.&quot;,&quot;airlock.phone_verification.payout_create.option_selection.title&quot;:&quot;We need you to confirm this change.&quot;,&quot;airlock.phone_verification.option_selection.description&quot;:&quot;We want to confirm that it’s really you who’s trying to access your account. To do that, we’ll send a code to a phone you’ve previously verified on Airbnb.&quot;,&quot;airlock.phone_verification.listing_activate.option_selection.description&quot;:&quot;We want to confirm that it’s really you who’s trying to add a listing.  To do that, we’ll send a code to a phone you’ve previously verified on Airbnb.&quot;,&quot;airlock.phone_verification.payout_create.option_selection.description&quot;:&quot;We want to confirm that it’s really you who’s trying to add a payout method.  To do that, we’ll send a code to a phone you’ve previously verified on Airbnb.&quot;,&quot;airlock.phone_verification.option_selection.how&quot;:&quot;How should we send the code?&quot;,&quot;airlock.phone_verification.option_selection.where&quot;:&quot;Where should we send the code?&quot;,&quot;airlock.phone_verification.response.title&quot;:&quot;Enter your 4-digit code.&quot;,&quot;airlock.phone_verification.We sent a code to your phone number&quot;:&quot;We sent a code to your phone number ending in %{last_four_digits}.&quot;,&quot;airlock.phone_verification.Depending on your provider&quot;:&quot;Depending on your provider, it may take a few minutes to arrive.&quot;,&quot;airlock.phone_verification.We will wait right here&quot;:&quot;We’ll wait right here.&quot;,&quot;airlock.phone_verification.Send me a text message&quot;:&quot;Send me a text message (SMS)&quot;,&quot;airlock.phone_verification.Call me&quot;:&quot;Call me&quot;,&quot;airlock.api_error&quot;:&quot;Something went wrong while processing your request. Please try again.&quot;,&quot;airlock.phone_verification.Phone number ending in&quot;:&quot;Phone number ending in %{last_four}&quot;,&quot;airlock.phone_verification.Enter Your Code&quot;:&quot;Enter Your Code&quot;,&quot;airlock.phone_verification.response.invalid&quot;:&quot;Looks like you entered the code incorrectly.&quot;,&quot;airlock.identity_info_confirmation.response.confirm_details&quot;:&quot;Confirm details&quot;,&quot;airlock.identity_info_confirmation.response.make_sure_details_are_correct&quot;:&quot;Take a moment to make sure your account details are still correct.&quot;,&quot;airlock.identity_info_confirmation.response.name&quot;:&quot;Name&quot;,&quot;airlock.identity_info_confirmation.response.first_name&quot;:&quot;First name&quot;,&quot;airlock.identity_info_confirmation.response.last_name&quot;:&quot;Last name&quot;,&quot;airlock.identity_info_confirmation.response.email&quot;:&quot;Email address&quot;,&quot;airlock.identity_info_confirmation.response.birthday&quot;:&quot;Birthday&quot;,&quot;airlock.identity_info_confirmation.response.birthday_month&quot;:&quot;Month&quot;,&quot;airlock.identity_info_confirmation.response.birthday_day&quot;:&quot;Day&quot;,&quot;airlock.identity_info_confirmation.response.birthday_year&quot;:&quot;Year&quot;,&quot;airlock.identity_info_confirmation.response.confirm_and_continue&quot;:&quot;Confirm and Continue&quot;,&quot;airlock.identity_info_confirmation.response.you_are_X_years_old&quot;:&quot;You’ve indicated you are %{emphasis_start}%{smart_count} year old%{emphasis_end}. ||||You’ve indicated you are %{emphasis_start}%{smart_count} years old%{emphasis_end}.&quot;,&quot;airlock.identity_info_confirmation.response.is_this_age_correct&quot;:&quot;Is this correct?&quot;,&quot;airlock.identity_info_confirmation.response.not_correct_change_my_birthday&quot;:&quot;No, change my birthday&quot;,&quot;airlock.identity_info_confirmation.response.yes_my_birthday_is_correct&quot;:&quot;Yes, this is correct&quot;,&quot;airlock.password_reset.response.title&quot;:&quot;Let’s change your password.&quot;,&quot;airlock.password_reset.response.description&quot;:&quot;Changing your password is an easy way to help keep your account secure. Let’s do that now.&quot;,&quot;airlock.password_reset.response.current_password&quot;:&quot;Current Password&quot;,&quot;airlock.password_reset.response.new_password&quot;:&quot;New Password&quot;,&quot;airlock.password_reset.response.confirm_new_password&quot;:&quot;Confirm New Password&quot;,&quot;airlock.password_reset.Next&quot;:&quot;Change Password&quot;,&quot;airlock.account_disabled.introduction.title&quot;:&quot;Account Disabled&quot;,&quot;airlock.account_disabled.introduction.introduction&quot;:&quot;To help protect your information, we’ve temporarily blocked your Airbnb account.&quot;,&quot;airlock.account_disabled.introduction.description&quot;:&quot;To restore access, send an email to account.disabled@airbnb.com from an email address associated with your Airbnb account.&quot;,&quot;airlock.no_phone_access.introduction.title&quot;:&quot;Emailing us will take longer.&quot;,&quot;airlock.no_phone_access.introduction.introduction&quot;:&quot;For security reasons, having Airbnb manually confirm this change can take 1-2 days. Email us at &lt;a href=\&quot;mailto:account.disabled@airbnb.com\&quot;&gt;account.disabled@airbnb.com&lt;/a&gt; from an address associated with your account and we’ll take it from there.&quot;,&quot;airlock.no_phone_access.introduction.tip.title&quot;:&quot;Make this update faster with your phone&quot;,&quot;airlock.no_phone_access.introduction.tip.description&quot;:&quot;If you’re travelling or your phone’s just out of reach, wait until you get it back and try to make this update again.&quot;,&quot;airlock.no_phone_access.Send Me a Code&quot;:&quot;Send Me a Code&quot;,&quot;airlock.no_phone_access.Email Airbnb&quot;:&quot;Email Airbnb&quot;,&quot;airlock.contact_us.response.title&quot;:&quot;Contact Us&quot;,&quot;airlock.contact_us.response.description&quot;:&quot;For your security, we would like to further verify your account.  Please contact us at &lt;a href=\&quot;mailto:account.disabled@airbnb.com\&quot;&gt;account.disabled@airbnb.com&lt;/a&gt;.&quot;,&quot;airlock.introduction&quot;:&quot;In order to continue, we ask that you complete a few challenges.&quot;,&quot;airlock.Get Started&quot;:&quot;Get Started&quot;,&quot;airlock.Continue&quot;:&quot;Continue&quot;,&quot;airlock.Next&quot;:&quot;Next&quot;,&quot;airlock.Back&quot;:&quot;Back&quot;,&quot;airlock.success.Thanks&quot;:&quot;Thanks %{first_name}&quot;,&quot;airlock.success.You are done&quot;:&quot;You’re done! You can go back to what you were doing.&quot;,&quot;have_a_moment&quot;:&quot;Have a moment?&quot;,&quot;help_make_experience_better&quot;:&quot;Help us make your Airbnb experience better by answering a quick survey.&quot;,&quot;lets_do_this&quot;:&quot;Let&#x27;s do this!&quot;,&quot;thanks_for_helping&quot;:&quot;Thanks for helping us out!&quot;,&quot;fill_out_survey&quot;:&quot;We&#x27;d love it if you filled out this quick survey.&quot;,&quot;surveyair_cancel&quot;:&quot;Cancel&quot;,&quot;surveyair_submit&quot;:&quot;Submit&quot;,&quot;surveyair_next&quot;:&quot;Next&quot;,&quot;surveyair_back&quot;:&quot;Back&quot;,&quot;surveyair_pagination&quot;:&quot;%{currentPage} of %{totalNumPages} pages&quot;,&quot;surveyair_strongly_disagree&quot;:&quot;Strongly Disagree&quot;,&quot;surveyair_disagree&quot;:&quot;Disagree&quot;,&quot;surveyair_neutral&quot;:&quot;Neutral&quot;,&quot;surveyair_agree&quot;:&quot;Agree&quot;,&quot;surveyair_strongly_agree&quot;:&quot;Strongly Agree&quot;,&quot;surveyair_no_answer&quot;:&quot;No Answer&quot;,&quot;surveyair_very_difficult&quot;:&quot;Very Difficult&quot;,&quot;surveyair_difficult&quot;:&quot;Difficult&quot;,&quot;surveyair_easy&quot;:&quot;Easy&quot;,&quot;surveyair_very_easy&quot;:&quot;Very Easy&quot;,&quot;shared.Close this modal&quot;:&quot;Close this modal&quot;,&quot;your_trips.x_guest(s)&quot;:&quot;%{smart_count} guest||||%{smart_count} guests&quot;,&quot;shared.Trips&quot;:&quot;Trips&quot;,&quot;header.View Trips&quot;:&quot;View Trips&quot;,&quot;header.View Wish Lists&quot;:&quot;View Wish Lists&quot;,&quot;header.You Have X Wish List(s)&quot;:&quot;You have %{smart_count} wish list||||You have %{smart_count} wish lists&quot;,&quot;header.X home(s)&quot;:&quot;%{smart_count} home||||%{smart_count} homes&quot;,&quot;header.Popular Wish Lists&quot;:&quot;Popular Wish Lists&quot;,&quot;your_trips.Error&quot;:&quot;Sorry, we can’t load trip updates right now. %{link_start}View Trips%{link_end}&quot;,&quot;reservation_status.timedout&quot;:&quot;Expired&quot;,&quot;shared.Wish Lists&quot;:&quot;Wish Lists&quot;,&quot;choose_language&quot;:&quot;Choose language&quot;,&quot;choose_currency&quot;:&quot;Choose currency&quot;,&quot;clear_dates&quot;:&quot;Clear Dates&quot;,&quot;datepicker_updated_years_ago&quot;:&quot;Updated %{smart_count} year ago |||| Updated %{smart_count} years ago&quot;,&quot;datepicker_updated_months_ago&quot;:&quot;Updated %{smart_count} month ago |||| Updated %{smart_count} months ago&quot;,&quot;datepicker_updated_days_ago&quot;:&quot;Updated %{smart_count} day ago |||| Updated %{smart_count} days ago&quot;,&quot;datepicker_updated_today&quot;:&quot;Updated today&quot;,&quot;datepicker_never_updated&quot;:&quot;Never updated&quot;,&quot;datepicker_min_nights&quot;:&quot;%{smart_count} night minimum stay |||| %{smart_count} night minimum stay&quot;,&quot;datepicker_min_nights_this_month&quot;:&quot;%{smart_count} night min. this month |||| %{smart_count} nights min. this month&quot;,&quot;datepicker_min_nights_varies&quot;:&quot;Minimum stay varies&quot;,&quot;sorry_something_went_wrong&quot;:&quot;Sorry, something went wrong. Please refresh the page and try again.&quot;}" id="_bootstrap-phrases" />
 <meta content="{&quot;account_activation/welcome.jpg&quot;:&quot;https://a1.muscache.com/airbnb/static/account_activation/welcome-aa503648ad6513fc0cb1284728e70d35.jpg&quot;,&quot;account_activation/success.jpg&quot;:&quot;https://a2.muscache.com/airbnb/static/account_activation/success-15a147d04b3a4af77d3ac5bd6f03d95d.jpg&quot;,&quot;user_pic-225x225.png?v=2&quot;:&quot;https://a0.muscache.com/airbnb/static/user_pic-225x225.png?v=2&quot;}" id="_bootstrap-image_paths" />
 <!--[if lt IE 9]>
 <script src="https://a0.muscache.com/airbnb/static/packages/ie8.bundle-2c6ceff205e12ee68229bd0a96077dab.js" type="text/javascript"></script>
@@ -3596,8 +3869,29 @@ aria-hidden="true"
   <div id="fb-root"></div>
 
   
-  <script src="https://a2.muscache.com/airbnb/static/packages/homepage-3ba13eb38f6c295b9c29e1287ec75337.js" type="text/javascript"></script>
+  <script src="./homepage-3ba13eb38f6c295b9c29e1287ec75337.js" type="text/javascript"></script>
   
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+
+
+const items = document.querySelectorAll(".accordion button");
+
+function toggleAccordion() {
+  const itemToggle = this.getAttribute('aria-expanded');
+  
+  for (i = 0; i < items.length; i++) {
+    items[i].setAttribute('aria-expanded', 'false');
+  }
+  
+  if (itemToggle == 'false') {
+    this.setAttribute('aria-expanded', 'true');
+  }
+}
+
+items.forEach(item => item.addEventListener('click', toggleAccordion));
+
+  </script>
 
 </body>
 </html>
